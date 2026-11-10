@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wooapetcare.wooahouse.com/sitemap.xml
