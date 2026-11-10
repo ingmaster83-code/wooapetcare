@@ -8,12 +8,14 @@ module Jekyll
     AMBIG = {}   # 여러 시도에 같은 이름이 있는 시군구(중구·북구 등)
 
     def clean_tail(s)
-      s.to_s.strip.sub(/[\s\)\]\}\>'"”’.,!?~·\-]+\z/, '')
+      s.to_s.strip.sub(/[\s\)\]\}\>'"”’.,!?~·\-#℃&*+=:;@%$^_|\/]+\z/, '')
     end
 
     def hangul_tail?(s)
       c = clean_tail(s)[-1]
-      !c.nil? && c.ord >= 0xAC00 && c.ord <= 0xD7A3
+      return false if c.nil?
+      return true if c.ord >= 0xAC00 && c.ord <= 0xD7A3
+      !(c =~ /[0-9A-Za-z]/).nil?
     end
 
     def batchim?(s)
@@ -21,7 +23,10 @@ module Jekyll
       return false if c.nil?
       o = c.ord
       return (o - 0xAC00) % 28 != 0 if o >= 0xAC00 && o <= 0xD7A3
-      false
+      return '013678'.include?(c) if c =~ /[0-9]/
+      t = clean_tail(s).downcase
+      return true if t.end_with?('ng')
+      'lmnr'.include?(t[-1])
     end
 
     def josa(word, with_b, without_b)
@@ -79,7 +84,7 @@ module Jekyll
     CAT_DONG_MIN = 2
     NEAR_COUNT = 6
 
-    CAT_ORDER = %w[펫샵·분양 조류·관상어·특수동물 애견호텔·돌봄 유치원·훈련 애견카페 동물병원 병설 펫미용·기타 위탁].freeze
+    CAT_ORDER = ["펫샵·분양", "조류·관상어·특수동물", "애견호텔·돌봄", "유치원·훈련", "애견카페", "동물병원 병설", "펫미용·기타 위탁"].freeze
 
     CAT_META = {
       '펫샵·분양' => {

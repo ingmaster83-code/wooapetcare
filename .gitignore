@@ -2,7 +2,3 @@
 _site/
 data/raw/
 Gemfile.lock
-_build.log
-_time.log
-.jekyll-cache/
-check.log

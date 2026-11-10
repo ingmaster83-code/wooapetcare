@@ -1,0 +1,10 @@
+C:\개인\wooahouse\wooapetcare\scripts\check_site.py:27: SyntaxWarning: invalid escape sequence '\/'
+  try: json.loads(ld.replace("<\/", "</"))
+0 0
+3000 1
+6000 1
+9000 2
+12000 4
+페이지 13667 깨진 링크 3 [('/place/${f.s}/', 2), ('/cat/clinic/', 211), ('/cat/etc/', 1122)]
+중복 title 2 ['노케이지 (**, *층, 동물위탁관리업) - 천안시 서북구 두정동 펫미용·기타 위탁 주소·전화번호 | 우아펫케어', '뽀짝뽀짝 (**, *층, 동물위탁관리업) - 전주시 완산구 펫미용·기타 위탁 주소·전화번호 | 우아펫케어']
+JSON-LD 오류 0 josa 미해결 1845

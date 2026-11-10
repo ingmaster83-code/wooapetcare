@@ -1,0 +1,9 @@
+Configuration file: C:/개인/wooahouse/wooapetcare/_config.yml
+            Source: C:/개인/wooahouse/wooapetcare
+       Destination: C:/개인/wooahouse/wooapetcare/_site
+ Incremental build: disabled. Enable with --incremental
+      Generating... 
+  LeisureGenerator: 시군구 247 / 동 1979 / 종류×시군구 1053 / 종류×동 1607 / 시설 8635
+    LeisureSitemap: 13669개 URL → 1개 사이트맵
+                    done in 131.313 seconds.
+ Auto-regeneration: disabled. Use --watch to enable.
